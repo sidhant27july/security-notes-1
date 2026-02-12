@@ -1,0 +1,51 @@
+1. What is an NGFW
+
+A Next-Generation Firewall is not just port/IP based.
+
+It understands:
+
+Applications
+
+Users
+
+Content
+
+Threat behavior
+
+It operates mainly at:
+
+Layer 3–7
+
+2. NGFW Architecture
+          ┌──────────────┐
+Internet ─┤ Outside Zone │
+          └──────┬───────┘
+                 │
+         ┌───────▼────────┐
+         │   NGFW Engine   │
+         │ ────────────── │
+         │  App ID        │
+         │  User ID       │
+         │  IPS           │
+         │  AV            │
+         │  SSL Inspect   │
+         │  URL Filter    │
+         └───────┬────────┘
+                 │
+          ┌──────▼───────┐
+          │ Inside Zone  │
+          └──────────────┘
+
+
+Key idea:
+Traffic is not allowed just because port 443 is open — it must match policy + application + user + security profile.
+
+3. Why NGFW Is Needed
+
+Traditional firewall problem:
+
+Allowed TCP 443 = everything allowed
+
+NGFW solution:
+
+TCP 443 + App = HTTPS + URL + user + threat scan
